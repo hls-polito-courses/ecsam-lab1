@@ -162,3 +162,5 @@ cython_debug/
 *.hdf5
 *.h5
 *.pb*
+content/
+model/
