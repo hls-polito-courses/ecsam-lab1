@@ -166,4 +166,4 @@ content/
 model/
 *.bin*
 *.mapping*
-*.xml*
+mnist_calc_test/*.xml*
