@@ -10,8 +10,12 @@ compile_opencl:
 	--strip-binary-header antirectifier_kernel.cl -o antirectifier_kernel.bin
 
 clean:
+	rm /tmp/mvnc.mutex
+
+dist_clean:
 	rm -f mnist_calc_test/tf_${MODEL}_*.*
 	rm -f opencl/*.bin*
+	rm /tmp/mvnc.mutex
 
 run:
 	cd mnist_calc_test && make run
