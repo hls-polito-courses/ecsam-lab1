@@ -1,4 +1,6 @@
-export MODEL=model
+ifndef MODEL
+override MODEL = model
+endif
 
 compile_model:
 	cp ./ipynb/${MODEL}/tf_${MODEL}_MNIST.pbtxt ./mnist_calc_test
@@ -12,6 +14,7 @@ compile_opencl:
 clean:
 	rm /tmp/mvnc.mutex
 
+# If you clean by mistake the initial sample model, you can find a spare copy in the 'mnist_calc_test/bak' folder
 dist_clean:
 	rm -f mnist_calc_test/tf_${MODEL}_*.*
 	rm -f opencl/*.bin*
