@@ -189,7 +189,8 @@ class TouchCalc:
         
         #self._plugin = IEPlugin(device="MYRIAD")
         self._core = IECore()
-        self._core.set_config({'VPU_CUSTOM_LAYERS': '../opencl/antirectifier_kernel.xml'}, device_name="MYRIAD.1.7-ma2480")
+        self._core.set_config({'VPU_CUSTOM_LAYERS': '/home/casu/myriad/test_mnist/opencl/custom_layers.xml'}, device_name="MYRIAD.1.7-ma2480")
+        # self._core.set_config({'VPU_CUSTOM_LAYERS': '../opencl/antirectifier_kernel.xml'}, device_name="MYRIAD.1.7-ma2480")
         # self._core.set_config({'VPU_CUSTOM_LAYERS': '../opencl/antirectifier_kernel.xml'}, device_name="MYRIAD.1.1-ma2480")
         # Create processor object for this network
         #self._net_processor = MnistProcessor(graph_filename, self._plugin)

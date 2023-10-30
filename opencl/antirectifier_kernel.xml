@@ -5,7 +5,7 @@
 			<Tensor arg-name="input0" type="input" port-index="0" format="BFYX"/>
 			<Tensor arg-name="output" type="output" port-index="0" format="BFYX"/>
 		</Parameters>
-				<WorkSizes dim="input,0" global="X,Y,F" local="X,Y,1"/>
+		<WorkSizes dim="input,0" global="X,Y,F" local="X,Y,1"/>
 	</Kernel>
 </CustomLayer>
 

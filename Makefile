@@ -11,6 +11,10 @@ compile_opencl:
 	cd opencl && /opt/intel/openvino/deployment_tools/tools/cl_compiler/bin/clc \
 	--strip-binary-header antirectifier_kernel.cl -o antirectifier_kernel.bin
 
+setup_inference:
+	mv ./mnist_calc_test/tf_${MODEL}_MNIST.xml ./mnist_calc_test/mnist_inference.xml 
+	mv ./mnist_calc_test/tf_${MODEL}_MNIST.bin ./mnist_calc_test/mnist_inference.bin 
+
 clean:
 	rm /tmp/mvnc.mutex
 
@@ -19,6 +23,9 @@ dist_clean:
 	rm -f mnist_calc_test/tf_${MODEL}_*.*
 	rm -f opencl/*.bin*
 	rm /tmp/mvnc.mutex
+
+devices:
+	python3 /opt/intel/openvino/inference_engine/samples/python/hello_query_device/hello_query_device.py
 
 run:
 	cd mnist_calc_test && make run
